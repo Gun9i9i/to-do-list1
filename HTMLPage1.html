@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+.addButton{
+	outline: none;
+    border: none;
+    height: 30px;
+    border-radius: 25px;
+    width: 30px;
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+    transition: .5s;
+   
+}
+
+
+
+
+
+</style>
+</head>
+
+
+<body>
+    <h1>TodoList</h1>
+    <div >
+    	   <input  id="nameInput"   type="text"  placeholder="What Do You Want to Do...">
+    	   <button class=addButton id=addbutton onclick=appendText()>add</button>
+           <span id="name"></span>
+           
+           </div>
+   
+           
+           <script>
+            var testButton = document.querySelector('button#addbutton');
+			var spanName = document.querySelector('span#name');
+			var nameInput = document.querySelector('input#nameInput');
+      /*testButton.addEventListener('click', function (e) {
+				// บาง element เมื่อกดแล้วจะมี default action การใส่ preventDefault คือบอกให้ browser ไม่ต้อง execute default action นั้น
+				e.preventDefault();
+
+				// ดึงค่าจาก text input
+				var textInNameInput = nameInput.value;
+
+				// ใส่ text เข้าไปใน span ที่เราต้องการ
+				spanName.textContent = textInNameInput;
+			});*/
+    
+       function appendText() {
+  var textInNameInput = $("<li></li>").text(nameInput.value);
+  $("span").append(textInNameInput);   // Append new elements
+  
+  }
+
+      /*function appendText1(){
+      var textInNameInput = "";
+      while(textInNameInput==""){
+       var textInNameInput = $("<li></li>").text(nameInput.value);
+       document.getElementById("demo").innerHTML = text;
+      }
+
+      }*/
+      
+      
+      
+
+   
+    </script>
+    
+    
+</body>
+</html>
